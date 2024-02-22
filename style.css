@@ -83,11 +83,15 @@ body * {
     z-index: 1;
     transform: translateY(-50%);
     cursor: pointer;
+    animation: slide-out .3s;
 }
 
 .ligth .switch button {
-    right: 0;
-    left: initial;
+    animation: slide-in .4s forwards;
+}
+
+.switch button:hover {
+    outline: 8px solid var(--highlight-color)
 }
 
 .switch span {
@@ -161,5 +165,23 @@ font-size: 14px;
 
     .ligth {
         --bg-url: url(./assets/bg-desktop-light.jpg);
+    }
+}
+
+@keyframes slide-in{
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%
+    }
+}
+
+@keyframes slide-out{
+    from {
+        left: 50%
+    }
+    to {
+        left:0
     }
 }
